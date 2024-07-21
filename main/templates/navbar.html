@@ -1,0 +1,58 @@
+<style>
+  .nav-bar {
+    height: 65px;
+    padding: 1vw 2.2vw;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fcf7f8;
+    background-color:  #0d6efd;
+    /* border-radius: 10px; */
+  }
+
+  .nav-left h3 {
+    font-size: 30px;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.9vw;
+    padding-left: 2vw;
+  }
+
+  .nav-right input[type="text"] {
+    width: 12vw;
+    padding: 0 10px 2px 10px;
+    border-radius: 0.4rem;
+    height: 30px;
+    border: none;
+  }
+
+  .nav-right input[type="text"]:focus {
+    outline: none;
+    color: black;
+    background-color: white;
+  }
+
+  .nav-right h3 a {
+    letter-spacing: 0.4px;
+    color: white;
+    font-size: 23px;
+    text-decoration: none;
+  }
+</style>
+
+
+<div class="nav-bar">
+  <div class="nav-left">
+    <h3>XChange</h3>
+  </div>
+  <div class="nav-right">
+    <input type="text" name="search" placeholder="Search" class="search" />
+    <h3><a href="/home">Home</a></h3>
+    <h3><a href="/profile">Profile</a></h3>
+    <h3><a href="/logout">Logout</a></h3>
+  </div>
+</div>
