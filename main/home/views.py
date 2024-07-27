@@ -11,6 +11,7 @@ def homepage(request):
     queryset = Items.objects.all()
     return render(request, 'home.html', context={'items':queryset, 'page':'Home'})
 
+@login_required
 def profile(request):
     userprof = Profile.objects.get(user=request.user)
     queryset = Items.objects.filter(seller=userprof)
@@ -22,6 +23,7 @@ def profile(request):
     }
     return render(request, 'profile.html', context)
 
+@login_required
 def additem(request):
     if request.method == 'POST':
         data =  request.POST
@@ -35,7 +37,7 @@ def additem(request):
         return redirect('/profile')
     return redirect('/profile')
 
-
+@login_required
 def deleteitem(request, id):
     item = Items.objects.get(id=id)
     if item.seller.user == request.user:
