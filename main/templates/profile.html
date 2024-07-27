@@ -3,159 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <title>Document</title>
     <style>
-      html,
       body {
-        height: 100%;
-        width: 100%;
-        background-color: #ced3dc;
+        background-color: black;
       }
-
-      .nav-bar {
-        height: 65px;
-        padding: 1vw 2.2vw;
-        margin: 0.2vw;
+      #container {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #fcf7f8;
-        background-color: #5b616a;
-        border-radius: 10px;
-      }
-
-      .nav-left h3 {
-        font-size: 35px;
-      }
-
-      .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 1.9vw;
         padding-left: 2vw;
+        padding-top: 10vh;
+        gap: 5vw;
       }
-
-      .nav-right h3 a {
-        letter-spacing: 0.4px;
-        color: white;
-        font-size: 23px;
-        text-decoration: none;
-      }
-
-      .container {
-        width: 100%;
-        display: flex;
-        padding: 10px;
-      }
-
-      .container .container-left {
-        width: 22vw;
-        height: 88vh;
-        background-color: #fcf7f8;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 3vh 2vh;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        border-radius: 5px;
-      }
-
-      .container .container-left img {
-        margin-bottom: 20px;
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        border: #5b616a double 3px;
-        overflow-clip-margin: content-box;
-        overflow: clip;
-      }
-
-      .container .container-left .name h1 {
-        text-transform: capitalize;
-      }
-
-      .container .container-left #user {
+      #left-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-      }
-
-      .container .container-left #user p {
-        font-size: smaller;
-      }
-
-      .container .container-right {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .container .container-right h2 {
-        text-transform: capitalize;
-        font-size: 30px;
-        margin-bottom: -10px;
-      }
-
-      .container .container-right .items-container {
-        width: 80vw;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        padding: 20px;
-        /* align-items: center; */
-      }
-
-      .items-container .item {
-        background-color: white;
-        padding: 2.5vh 0;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .items-container .img-container {
-        height: 35vh;
-        width: 230px;
-      }
-
-      .items-container .img-container img {
+        background-color: aliceblue;
+        border-radius: 2%;
+        padding: 5%;
+        gap: 0vh;
         height: 100%;
-        width: 100%;
+        position: sticky;
+        top: 20vh;
+      }
+      .profilepic {
+        border-radius: 100%;
+        height: 120px;
+        width: 120px;
       }
 
-      .items-container .item-title {
-        font-size: 18px;
-        text-transform: capitalize;
-        font-weight: 200;
-        margin: 12px 0;
+      #profile-container {
+        border-radius: 100%;
+        position: relative;
+        top: -20vh;
+        height: 120px;
+        width: 120px;
+        border: 10px solid black;
       }
-
-      .items-container .item-data {
+      #user-details {
+        position: relative;
+        top: -10vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
       }
+      #user-details p,
+      #user-details b,
+      #userdetails p span {
+        font-family: "Caveat", cursive;
+        font-optical-sizing: auto;
+        font-size: 20px;
+      }
 
-      button {
+      .sellButton:hover {
+        background-color: #c82333;
+      }
+      .sellButton {
         margin-top: 8px;
         padding: 5px 10px;
-        background-color: #dc3545;
+        background-color: #ff4955;
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        padding: 10px 20px;
+        font-size: 16px;
       }
 
-      button:hover {
+      #right-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+      .items-container {
+        display: flex;
+        flex-direction: row;
+        gap: 2vw;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      .item {
+        /* background: linear-gradient(180deg, #c82333, #d32d40, #ff4955, #ffffff); */
         background-color: #c82333;
+        padding: 4%;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+      }
+      .img-container img {
+        height: 225px;
+        width: 230px;
+        border-radius: 5px;
+      }
+      .removebtn {
+        margin-top: 8px;
+        /* padding: 5px 10px; */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: black;
+      }
+      .removebtn:hover {
+        background-color: #0c0808;
+      }
+      .removebtnform {
+        display: flex;
+        justify-content: center;
       }
 
       .overlay {
@@ -165,13 +127,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.5
-        ); /* Semi-transparent black overlay */
-        backdrop-filter: blur(1px); /* Blurring effect */
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(1px);
         z-index: 2;
       }
 
@@ -180,10 +137,11 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: white;
+        background-color: #ff4955;
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        /* color: white; */
       }
 
       .popup .popup-content {
@@ -207,13 +165,19 @@
       }
 
       .popup .popup-content #sell-container button {
-        padding: 10px 17px;
-        font-size: 15px;
+        margin-top: 8px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: black;
       }
 
       .popup .popup-content input {
         width: 80%;
-        background: #dfdddd;
+        background: white;
         border: 2.2px grey solid;
         outline: none;
         padding: 1.8vh 2.6vh;
@@ -228,68 +192,126 @@
         top: 10px;
         right: 10px;
         cursor: pointer;
+        /* background-color: white;
+        height: 20px;
+        width: 20px; */
       }
-
-      .sellButton {
-        padding: 10px 20px;
-        font-size: 16px;
+      .data {
+        font-family: "Caveat", cursive;
+        font-optical-sizing: auto;
+        font-size: 20px;
+      }
+      .item-title {
+        font-family: "Caveat", cursive;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        text-transform: capitalize;
+      }
+      #addfirst {
+        align-items: center;
+        /* background-color: initial;
+    background-image: linear-gradient(#464d55, #25292e); */
+        background-color: #000;
+        border-radius: 8px;
+        border-width: 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+          0 3px 6px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        flex-direction: column;
+        font-family: Forma;
+        font-size: 18px;
+        height: 52px;
+        justify-content: center;
+        line-height: 1;
+        margin-bottom: 2vh;
+        outline: none;
+        overflow: hidden;
+        padding: 0 32px;
+        text-align: center;
+        text-decoration: none;
+        transform: translate3d(0, 0, 0);
+        transition: all 150ms;
+        vertical-align: baseline;
+        white-space: nowrap;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
       }
     </style>
   </head>
   <body>
     {% include 'navbar.html' %}
-    <div class="container">
-      <div class="container-left">
-        <img
-          src="/media/{{profile.profile_img}}"
-          alt="Profile Image"
-          id="profile-img"
-        />
-        <div class="name" id="user">
-          <h1>{{profile.name}}</h1>
-          <p>Name</p>
+    <div id="container">
+      <div id="left-container">
+        <div id="profile-container">
+          <img
+            class="profilepic"
+            src="/media/{{profile.profile_img}}"
+            alt="Profile Image"
+            id="profile-img"
+          />
         </div>
-        <div class="username" id="user">
-          <h1>{{user.username}}</h1>
-          <p>Username</p>
-        </div>
-        <div class="mobile" id="user">
-          <h1>{{profile.phone}}</h1>
-          <p>Phone</p>
+        <div id="user-details">
+          <b>Name: </b>
+          <p><span>{{profile.name}}</span></p>
+          <p><b>(@_<span>{{user.username}}</span>)</b></p>
+          <b>Mobile: </b>
+          <p><span>{{profile.phone}}</span></p>
         </div>
         <button id="openFormBtn" class="sellButton">Sell</button>
       </div>
 
-      <div class="container-right">
-        <h2>Items for Sale</h2>
+      <div id="right-container">
+        <h1 style="color: white">Items for Sale</h1>
         <div class="items-container">
-          {% for item in items %}
+          {% if items %} {% for item in items %}
           <div class="item">
             <div class="img-container">
               <img src="/media/{{item.item_img}}" />
             </div>
             <div class="item-title">
-              <h2>{{ item.item_name }}</h2>
+              <h2 class="item-title"><b>{{ item.item_name }}</b></h2>
             </div>
             <div class="item-data">
-              <p><b>Cost &ensp;: &ensp;</b> ${{ item.item_cost }}</p>
-              <form method="POST" action="{% url 'deleteitem' item.id %}">
+              <p class="data">
+                <b>Cost &ensp;: &ensp;</b> ${{ item.item_cost }}
+              </p>
+              <form
+                class="removebtnform"
+                method="POST"
+                action="{% url 'deleteitem' item.id %}"
+              >
                 {% csrf_token %}
-                <button type="submit">Remove</button>
+                <button class="removebtn" type="submit">Remove</button>
               </form>
             </div>
           </div>
-          {% endfor %}
+          {% endfor %} {% else %}
+          <div class="item">
+            <!-- <div class="no-items-content"> -->
+            <h2>No Items Available</h2>
+            <p>There are currently no items to display.</p>
+            <button id="addfirst">Add Your First Item</button>
+
+            <!-- </div> -->
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>
-
     <div id="overlay" class="overlay">
       <div class="popup">
         <span class="close" id="closeBtn">&times;</span>
         <div class="popup-content">
           <h2>List an Item</h2>
-          <form method="post" enctype="multipart/form-data" action="{% url 'additem' %}">
+          <form
+            method="post"
+            enctype="multipart/form-data"
+            action="{% url 'additem' %}"
+          >
             {% csrf_token %}
             <div id="sell-container">
               <input type="text" name="item_name" placeholder="Enter name" />
@@ -312,6 +334,13 @@
         .getElementById("closeBtn")
         .addEventListener("click", function () {
           document.getElementById("overlay").style.display = "none";
+        });
+    </script>
+    <script>
+      document
+        .getElementById("addfirst")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
         });
     </script>
   </body>

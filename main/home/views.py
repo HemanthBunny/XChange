@@ -37,10 +37,10 @@ def additem(request):
 
 
 def deleteitem(request, id):
-    item = Items.objects.get(id=id).delete()
-    # if item.seller.user == request.user:
-    #     item.delete()
-    #     print("inside delete")
+    item = Items.objects.get(id=id)
+    if item.seller.user == request.user:
+        item.delete()
+        print("inside delete")
     return redirect('/profile')
 
 def loginpage(request):
@@ -51,10 +51,12 @@ def loginpage(request):
         print(username + " " + password)
         if not User.objects.filter(username = username).exists():
             messages.error(request, "Invalid username")
+            print("here")
             return redirect('/login/')
         user = authenticate(username = username, password = password)
         if user is None:
-            messages.error(request, "Invalid username")
+            messages.error(request, "Invalid Password")
+            print("here")
             return redirect('/login/')
         else:
             login(request, user)
